@@ -3,56 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website</title>
+    <title>Online Application Form</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Personal Website</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="bio.html">Bio-Data</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="intro">
-        <h2>About Me</h2>
-        <p>Welcome to my personal website. Here, you can find my Resume, Bio-Data, and some of my works.</p>
-    </section>
+    <div class="container">
+        <h2>Online Application Form</h2>
+        <form id="applicationForm" action="submit.php" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
 
-    <footer>
-        <p>&copy; 2024 My Personal Website</p>
-    </footer>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-    <!-- Add this at the end of the body section of your HTML -->
-<button id="scrollTopBtn" onclick="scrollToTop()">Scroll to Top</button>
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required>
 
-<script>
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-</script>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
 
-<style>
-    #scrollTopBtn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #333;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+            <button type="submit" id="submitButton">Submit</button>
+        </form>
+    </div>
 
-    #scrollTopBtn:hover {
-        background-color: #f39c12;
-    }
-</style>
+    <div id="response"></div>
 
+    <script src="script.js"></script>
 </body>
 </html>
